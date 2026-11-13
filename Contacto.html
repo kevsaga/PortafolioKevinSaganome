@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Contacta a Kevin Saganome, desarrollador de software y QA Tester junior.">
+   <title>Contacto | Kevin Saganome</title>
+   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="Style.css">
+   <link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+    <header class="nav">
+        <a href="Index.html" class="logo">Kevin Saganome</a>
+        <nav>
+        <a href="SobreMi.html">Sobre mi</a>
+        <a href="Proyectos.html">Proyectos</a>
+        <a href="Certificados.html">Certificados</a>
+        <a href="Experiencia.html">Experiencia</a>
+        <a href="Contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+<main>
+    <section class="contacto" id="contacto">
+
+        <div class="contacto-intro">
+            <p class="Trabajamos">¿TRABAJAMOS JUNTOS?</p>
+            <h2>Hablemos</h2>
+            <p class="contacto-texto">
+                Si tienes una idea, una oferta de prácticas o quieres revisar la calidad de tu software,
+                escríbeme. Respondo lo antes posible.
+            </p>
+        </div>
+
+        <div class="contacto-grid">
+
+            <!-- Columna izquierda: formas de contacto -->
+            <div class="contacto-tarjetas">
+                <a class="contacto-card" href="https://mail.google.com/mail/?view=cm&to=kevsaga20@gmail.com&su=Vi%20tu%20portafolio%20y%20quiero%20trabajar%20contigo" target="_blank" rel="noopener noreferrer">
+                    <span class="contacto-icono">✉️</span>
+                    <span>
+                        <strong>Correo</strong>
+                        <small>kevsaga20@gmail.com</small>
+                    </span>
+                </a>
+
+                <a class="contacto-card" href="https://github.com/kevsaga" target="_blank" rel="noopener noreferrer">
+                    <span class="contacto-icono">💻</span>
+                    <span>
+                        <strong>GitHub</strong>
+                        <small>github.com/kevsaga</small>
+                    </span>
+                </a>
+
+                <div class="contacto-card contacto-info">
+                    <span class="contacto-icono">📍</span>
+                    <span>
+                        <strong>Ubicación</strong>
+                        <small>Bogotá, Colombia</small>
+                    </span>
+                </div>
+            </div>
+
+            <form class="contacto-form" id="formContacto">
+                <h3>Envíame un mensaje</h3>
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="correo">Tu correo</label>
+                <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Ej: Oportunidad de prácticas" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame en qué puedo ayudarte" required></textarea>
+
+                <button type="submit" class="boton Primerboton contacto-enviar">Enviar mensaje</button>
+                <p class="contacto-nota">Se abrirá tu aplicación de correo con el mensaje listo para enviar.</p>
+            </form>
+
+        </div>
+    </section>
+</main>
+
+<footer class="Piepagina">
+<p>© 2026 Kevin Saganome</p>
+</footer>
+
+<script>
+    const form = document.getElementById('formContacto');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nombre = document.getElementById('nombre').value.trim();
+        const correo = document.getElementById('correo').value.trim();
+        const asunto = document.getElementById('asunto').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+
+        const cuerpo = mensaje + '\n\n— ' + nombre + '\n' + correo;
+        const enlace = 'mailto:kevsaga20@gmail.com'
+            + '?subject=' + encodeURIComponent(asunto)
+            + '&body=' + encodeURIComponent(cuerpo);
+
+        window.location.href = enlace;
+    });
+</script>
+</body>
+</html>
